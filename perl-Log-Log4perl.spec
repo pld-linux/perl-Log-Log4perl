@@ -47,7 +47,7 @@ na Javie) pakietu loguj±cego Log4j w czystym Perlu.
 
 %build
 %{__perl} Makefile.PL < /dev/null \
-        INSTALLDIRS=vendor
+	INSTALLDIRS=vendor
 %{__make}
 
 %{?with_tests:%{__make} test}
