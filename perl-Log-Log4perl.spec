@@ -9,7 +9,7 @@ Summary:	Log::Log4perl Perl module - adds logging capabilities
 Summary(pl):	Modu³ Perla Log::Log4perl - dostarczenie obs³ugi logowania
 Name:		perl-Log-Log4perl
 Version:	0.50
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
