@@ -1,31 +1,35 @@
-#
+
 # Conditional build:
-# _without_tests - do not perform "make test"
-#
+%bcond_without tests	# do not perform "make test"
+
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Log
 %define	pnam	Log4perl
 Summary:	Log::Log4perl module adds logging capabilities
 Summary(pl):	Modu³ Log::Log4perl dostarczaj±cy obs³ugê logowania
 Name:		perl-%{pdir}-%{pnam}
-Version:	0.37
+Version:	0.38
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b078e016288fa4e01126a8618ec0e5f0
-%if 0%{!?_without_tests:1}
+# Source0-md5:	6c70ca5c91146dac5eebcf00ca82607f
+URL:		http://log4perl.sourceforge.net/
+%if %{with tests}
 BuildRequires:	perl-DBI
+BuildRequires:	perl-DBD-CSV
 BuildRequires:	perl-Log-Dispatch
-BuildRequires:	perl-libxml-enno
+BuildRequires:	perl-XML-DOM >= 1.43
+#BuildRequires:	perl-Log-Dispatch-FileRotate
 %endif
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	perl-XML-DOM >= 1.43
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # used conditionally
-%define		_noautoreq	'perl(LWP::UserAgent)' 'perl(Log::Dispatch::FileRotate)'
+%define		_noautoreq	'perl(XML::DOM)' 'perl(LWP::UserAgent)' 'perl(Log::Dispatch::FileRotate).*'
 
 %description
 Log::Log4perl lets you remote-control and fine-tune the logging
@@ -45,7 +49,7 @@ na Javie) pakietu loguj±cego Log4j w czystym Perlu.
         INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
