@@ -23,7 +23,7 @@ BuildRequires:	perl-Log-Dispatch
 BuildRequires:	perl-XML-DOM >= 1.43
 #BuildRequires:	perl-Log-Dispatch-FileRotate
 %endif
-BuildRequires:	perl-devel >= 5.6
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-XML-DOM >= 1.43
 BuildArch:	noarch
