@@ -8,16 +8,23 @@
 Summary:	Log::Log4perl module adds logging capabilities
 Summary(pl):	Modu³ Log::Log4perl dostarczaj±cy obs³ugê logowania
 Name:		perl-%{pdir}-%{pnam}
-Version:	0.29
-Release:	0.1
+Version:	0.30
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
+%if 0%{!?_without_tests:1}
+BuildRequires:	perl-DBI 
 BuildRequires:	perl-Log-Dispatch
+BuildRequires:	perl-libxml-enno
+%endif
 BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# used conditionally
+%define		_noautoreq	'perl(LWP::UserAgent)' 'perl(Log::Dispatch::FileRotate)'
 
 %description
 Log::Log4perl lets you remote-control and fine-tune the logging
