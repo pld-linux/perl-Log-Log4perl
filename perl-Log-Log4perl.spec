@@ -10,7 +10,8 @@ Summary(pl):	Modu³ Perla Log::Log4perl - dostarczenie obs³ugi logowania
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.43
 Release:	1
-License:	GPL/Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	51283ec478790ca7334654a2d6c2774e
