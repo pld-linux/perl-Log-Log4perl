@@ -8,12 +8,12 @@
 Summary:	Log::Log4perl module adds logging capabilities
 Summary(pl):	Modu³ Log::Log4perl dostarczaj±cy obs³ugê logowania
 Name:		perl-%{pdir}-%{pnam}
-Version:	0.36
+Version:	0.37
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	007d8a656253b610845b5f636298ce5d
+# Source0-md5:	b078e016288fa4e01126a8618ec0e5f0
 %if 0%{!?_without_tests:1}
 BuildRequires:	perl-DBI
 BuildRequires:	perl-Log-Dispatch
