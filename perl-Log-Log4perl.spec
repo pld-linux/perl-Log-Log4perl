@@ -3,8 +3,8 @@
 %bcond_without tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Log
-%define	pnam	Log4perl
+%define		pdir	Log
+%define		pnam	Log4perl
 Summary:	Log::Log4perl Perl module - adds logging capabilities
 Summary(pl):	Modu³ Perla Log::Log4perl - dostarczenie obs³ugi logowania
 Name:		perl-Log-Log4perl
