@@ -1,7 +1,7 @@
-
+#
 # Conditional build:
 %bcond_without tests	# do not perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Log
 %define	pnam	Log4perl
@@ -55,7 +55,8 @@ na Javie) pakietu loguj±cego Log4j w czystym Perlu.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
