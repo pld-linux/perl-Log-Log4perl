@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Log
 %define	pnam	Log4perl
-Summary:	Log::Log4perl module adds logging capabilities
-Summary(pl):	Modu³ Log::Log4perl dostarczaj±cy obs³ugê logowania
+Summary:	Log::Log4perl Perl module - adds logging capabilities
+Summary(pl):	Modu³ Perla Log::Log4perl - dostarczenie obs³ugi logowania
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.43
 Release:	1
