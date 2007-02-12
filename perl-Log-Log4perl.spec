@@ -6,7 +6,7 @@
 %define		pdir	Log
 %define		pnam	Log4perl
 Summary:	Log::Log4perl Perl module - adds logging capabilities
-Summary(pl):	Modu³ Perla Log::Log4perl - dostarczenie obs³ugi logowania
+Summary(pl.UTF-8):   ModuÅ‚ Perla Log::Log4perl - dostarczenie obsÅ‚ugi logowania
 Name:		perl-Log-Log4perl
 Version:	1.06
 Release:	0.1
@@ -38,10 +38,10 @@ Log::Log4perl lets you remote-control and fine-tune the logging
 behaviour of your system from the outside. It implements the widely
 popular (Java-based) Log4j logging package in pure Perl.
 
-%description -l pl
-Log::Log4perl pozwala na zdalne sterowanie i szczegó³owe dostosowanie
-sposobu logowania z zewn±trz. Jest implementacj± popularnego (opartego
-na Javie) pakietu loguj±cego Log4j w czystym Perlu.
+%description -l pl.UTF-8
+Log::Log4perl pozwala na zdalne sterowanie i szczegÃ³Å‚owe dostosowanie
+sposobu logowania z zewnÄ…trz. Jest implementacjÄ… popularnego (opartego
+na Javie) pakietu logujÄ…cego Log4j w czystym Perlu.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
