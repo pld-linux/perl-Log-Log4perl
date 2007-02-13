@@ -6,7 +6,7 @@
 %define		pdir	Log
 %define		pnam	Log4perl
 Summary:	Log::Log4perl Perl module - adds logging capabilities
-Summary(pl.UTF-8):   Moduł Perla Log::Log4perl - dostarczenie obsługi logowania
+Summary(pl.UTF-8):	Moduł Perla Log::Log4perl - dostarczenie obsługi logowania
 Name:		perl-Log-Log4perl
 Version:	1.06
 Release:	0.1
