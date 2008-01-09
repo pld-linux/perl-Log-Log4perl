@@ -9,7 +9,7 @@ Summary:	Log::Log4perl Perl module - adds logging capabilities
 Summary(pl.UTF-8):	Moduł Perla Log::Log4perl - dostarczenie obsługi logowania
 Name:		perl-Log-Log4perl
 Version:	1.14
-Release:	0.1
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
