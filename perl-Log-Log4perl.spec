@@ -8,21 +8,21 @@
 Summary:	Log::Log4perl Perl module - adds logging capabilities
 Summary(pl.UTF-8):	Moduł Perla Log::Log4perl - dostarczenie obsługi logowania
 Name:		perl-Log-Log4perl
-Version:	1.24
+Version:	1.25
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	102dd4fc918ffb730c7cde49aeaecb3a
+# Source0-md5:	d189f9c74b6811b2bc9d0c508041cd7a
 URL:		http://log4perl.sourceforge.net/
 %if %{with tests}
-BuildRequires:	perl-DBI
 BuildRequires:	perl-DBD-CSV
+BuildRequires:	perl-DBI
 BuildRequires:	perl-Log-Dispatch
+#BuildRequires:	perl-Log-Dispatch-FileRotate
 BuildRequires:	perl-SQL-Statement
 BuildRequires:	perl-XML-DOM >= 1.43
-#BuildRequires:	perl-Log-Dispatch-FileRotate
 %endif
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -65,6 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes
+%attr(755,root,root) %{_bindir}/l4p-tmpl
 %{perl_vendorlib}/%{pdir}/*.pm
 %{perl_vendorlib}/%{pdir}/%{pnam}
-%{_mandir}/man3/*
+%{_mandir}/man?/*
