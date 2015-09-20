@@ -17,21 +17,27 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version
 # Source0-md5:	d247d2327d7f32dca09cbeb51a953fc5
 URL:		http://mschilli.github.io/log4perl/
 %if %{with tests}
-BuildRequires:	perl-DBD-CSV
-BuildRequires:	perl-DBI
+BuildRequires:	perl(File::Path) >= 2.06_06
+BuildRequires:	perl(File::Spec) >= 0.82
+BuildRequires:	perl-DBD-CSV >= 0.33
+BuildRequires:	perl-DBD-SQLite
+BuildRequires:	perl-DBI >= 1.607
 BuildRequires:	perl-Log-Dispatch
-#BuildRequires:	perl-Log-Dispatch-FileRotate
-BuildRequires:	perl-SQL-Statement
+#BuildRequires:	perl-Log-Dispatch-FileRotate >= 1.10
+BuildRequires:	perl-SQL-Statement >= 1.20
+BuildRequires:	perl-Test-Simple >= 0.45
 BuildRequires:	perl-XML-DOM >= 1.43
+#BuildRequires:	perl-rrdtool
 %endif
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.663
 Requires:	perl-XML-DOM >= 1.43
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # used conditionally
-%define		_noautoreq	'perl(XML::DOM)' 'perl(LWP::UserAgent)' 'perl(Log::Dispatch::FileRotate).*' 'perl(Log::Log4Perl.*)' 'perl(RRDs)'
+%define		_noautoreq_perl	XML::DOM LWP::UserAgent Log::Dispatch::FileRotate Log::Log4Perl.* RRDs
 
 %description
 Log::Log4perl lets you remote-control and fine-tune the logging
@@ -64,8 +70,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes
+%doc Changes LICENSE
 %attr(755,root,root) %{_bindir}/l4p-tmpl
-%{perl_vendorlib}/%{pdir}/*.pm
-%{perl_vendorlib}/%{pdir}/%{pnam}
-%{_mandir}/man?/*
+%{perl_vendorlib}/Log/Log4perl.pm
+%{perl_vendorlib}/Log/Log4perl
+%{_mandir}/man1/l4p-tmpl.1p*
+%{_mandir}/man3/Log::Log4perl*.3pm*
