@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Log
 %define		pnam	Log4perl
 Summary:	Log::Log4perl Perl module - adds logging capabilities
